@@ -26,7 +26,7 @@
 
       <p>Add to bookmarks bar:</p>
       <a class="btn" style="background-color: rgb(21, 149, 91);" 
-        href="javascript: (function() { function e(e) { var n = document.getElementsByTagName('head')[0]; var r = document.createElement('script'); r.type = 'text/javascript'; r.src = e; n.appendChild(r); }; var time = new Date(); var t = 'https://cdn.rawgit.com/nirazabal/form-filler-generator/master/formFillerGenerator.js?version=1' + time.getFullYear() + time.getMonth() + time.getDay(); e(t)})();">FormFillerGenerator</a>
+        href="javascript: !function(){function e(e){var t=document.getElementsByTagName('head')[0],a=document.createElement('script');a.type='text/javascript',a.src=e,t.appendChild(a)}function t(e,t){var a=new XMLHttpRequest;a.onreadystatechange=function(){4==a.readyState&&200==a.status&&t(a.responseText)},a.open('GET',e,!0),a.send(null)}t('https://api.github.com/repos/nirazabal/form-filler-generator/commits',function(t){var a=JSON.parse(t)[0].sha,n='https://cdn.rawgit.com/nirazabal/form-filler-generator/'+a+'/formFillerGenerator.js';e(n)})}();">FormFillerGenerator</a>
       
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/nirazabal/form-filler-generator">Form Filler Generator</a> is maintained by <a href="https://github.com/nirazabal">nirazabal</a>.</span>
