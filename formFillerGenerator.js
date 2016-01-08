@@ -106,7 +106,7 @@ javascript: (function() {
 
     var FFG_fireEvent = function fireEvent(element, event) { if (document.createEventObject) { var evt = document.createEventObject(); return element.fireEvent("on" + event, evt) }
      else { var evt = document.createEvent("HTMLEvents"); evt.initEvent(event, true, true); /* event type,bubbling,cancelable*/ return !element.dispatchEvent(evt); }};
-    var FFG_fillInput = function fillInput(name, value) { var elem = document.getElementsByName(name)[0]; if (elem) { if (elem.type == "checkbox"){ elem.checked = value; }else{ elem.value = value; } FFG_fireEvent(elem, "change"); }};
+    var FFG_fillInput = function fillInput(name, value) { var elem = document.getElementsByName(name)[0]; if (elem) { if (elem.type == "checkbox"){ if (value) elem.click(); }else{ elem.click(); elem.value = value; } FFG_fireEvent(elem, "change"); }};
     var FFG_fillSelect = function fillSelect(name, value) { 
         var elem = document.getElementsByName(name)[0]; 
         if (elem && elem.tagName == "SELECT") {
