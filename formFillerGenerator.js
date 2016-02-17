@@ -6,7 +6,12 @@ javascript: (function() {
     head.appendChild(script);
     
     FFG_initParse = function(){
-        Parse.initialize("dE4I09XAf3ydjQ6HAHJsux1WNU9kPwkh6dqjJyvt", "wqErrCU3Idz7s5XnG4MoA2qY7GvJohKpj8nnc3UB");
+        if (typeof(Parse) !== 'undefined'){
+            Parse.initialize("dE4I09XAf3ydjQ6HAHJsux1WNU9kPwkh6dqjJyvt", "wqErrCU3Idz7s5XnG4MoA2qY7GvJohKpj8nnc3UB");
+            FFG_listFormFillers();
+        }else{
+            setTimeout(FFG_initParse, 1000);
+        }
     }
     
     FFG_listFormFillers = function(){
@@ -207,7 +212,6 @@ javascript: (function() {
 
     setTimeout(FFG_showCustomBox, 1000);
     setTimeout(FFG_initParse, 2000);
-    setTimeout(FFG_listFormFillers, 3000);
     FFG_appendCssStyles();
 
 })()
